@@ -1,0 +1,11 @@
+.DS_Store
+Thumbs.db
+node_modules/
+*.log
+.env
+.env.*
+# Raw saved-page imports; keep only the cleaned result in src/
+_import/
+*_files/
+*.saved.html
+.claude/settings.local.json

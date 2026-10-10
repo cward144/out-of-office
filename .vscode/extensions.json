@@ -1,0 +1,9 @@
+{
+  "recommendations": [
+    "anthropic.claude-code",
+    "github.copilot-chat",
+    "ms-vscode.live-server",
+    "yzhang.markdown-all-in-one",
+    "editorconfig.editorconfig"
+  ]
+}

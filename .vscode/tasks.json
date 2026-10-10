@@ -1,0 +1,22 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Serve game (localhost:8000)",
+      "type": "shell",
+      "command": "python3 -m http.server 8000 -d src",
+      "isBackground": true,
+      "problemMatcher": [],
+      "group": { "kind": "build", "isDefault": true }
+    },
+    {
+      "label": "Import saved page into src/",
+      "type": "shell",
+      "command": "python3 tools/import_saved_page.py \"${input:savedHtml}\"",
+      "problemMatcher": []
+    }
+  ],
+  "inputs": [
+    { "id": "savedHtml", "type": "promptString", "description": "Path to the saved .html file" }
+  ]
+}
