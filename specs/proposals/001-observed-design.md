@@ -4,6 +4,10 @@
 - **Source:** `src/js/engine.js` (rules, items, dialogue, endings) and `src/js/game.js` (hotspots, chapter labels, choices, hints), plus a scripted golden-path run.
 - **How to use:** each block names a GAME_DESIGN section, what it says now, and what the code does. Copy what you agree with into GAME_DESIGN, edit, or reject. Lines in quotes are the game's own copy, verbatim. Nothing here is a new idea; anything that looked like a gap went to `OPEN_QUESTIONS.md` instead.
 
+## Status (2026-10-10 review)
+- **Merged into GAME_DESIGN:** §4 arc, §6 rooms (+ CEO as set dressing), §8.3 choices, §8.4 hints, §9 chapters, §10 ending.
+- **Still open:** §8.2 box items (designer not sure yet; Q-001), §5 voice lines, §8.5 pocket items.
+
 ---
 
 ## §4 Story & tone — arc

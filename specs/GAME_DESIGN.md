@@ -36,7 +36,7 @@ Proposed from the tone of the build; edit to match your intent.
 
 **Arc (current build):**
 1. Opening · make a little room: bring two keepsakes (plant, mug) **[FROM BUILD]**
-2. Middle · help Bea retrieve her sketchbook; supply token, printer, lower drawer **[FROM BUILD, details to confirm]**
+2. Middle · fix the printer jam (required): water softens the label, the tray lever releases the exit slip and a supply token. Optional: use the token on Bea's lower drawer to give her sketchbook back ("Helping me is optional.") **[FROM BUILD]**
 3. Departure · security (Graham), exit cleared, leave the building **[FROM BUILD]**
 4. Ending · the park: settle on a bench with Bea; the things you kept come with you **[FROM BUILD]**
 
@@ -61,11 +61,13 @@ Three areas, switched via a room nav and floor doors. **[FROM BUILD]**
 | Room | Caption | Purpose | Contents | Status |
 |---|---|---|---|---|
 | **Desk** | "YOUR DESK · FOR NOW" | Start; pick keepsakes | Plant, Values mug, Team poster, Team photo, Excellence award, Manager's message | [FROM BUILD] |
-| **Supplies** | | Obtain the supply token / use lower drawer | **[DECIDE]** | partial |
-| **Lobby** | | Printer, Graham, exit | **[DECIDE]** | partial |
-| **Park** | "Room for what comes next." | Ending | One bench, Bea, ground | [FROM BUILD] |
+| **Supplies** | | Fix the printer jam (exit slip + supply token); optional: Bea's sketchbook | The printer, Water cooler, Bea · designer, Tray lever (on its hook), Locked sketchbook drawer | [FROM BUILD] |
+| **Lobby** | | Get past Graham, leave | Graham · security, The elevator, CEO broadcast | [FROM BUILD] |
+| **Park** | "Room for what comes next." | Ending | Bench, at your feet, beside Bea (only if you joined her) | [FROM BUILD] |
 
-Rule in build: you must pack plant and mug before leaving the desk area ("Pack your plant and mug before heading out."). **[FROM BUILD]**
+The Lobby's "CEO broadcast" is set dressing, a one-line background joke like the footer, not a character: "The CEO says 'We're a family.' Behind him, someone silently removes a chair. He keeps talking."
+
+Rule: Supplies and Lobby stay locked until the plant and mug are packed ("Room for the plant and mug first."). **[FROM BUILD]**
 
 **[DECIDE]** Is there a map? Will rooms be added? Any rooms that unlock later?
 
@@ -99,11 +101,18 @@ Click/tap to walk; arrow keys to walk; click objects or labelled hotspots. "Show
 
 ### 8.3 Dialogue **[FROM BUILD]**
 Modal conversations with a speaker label and optional portrait; ambient lines in a scene-story strip; a "departure review" and a "field guide" panel exist.
-**[DECIDE]** Do dialogues have choices? Do choices change the ending line or only flavor?
+**Choices:** yes. Choices can change ending lines, but never block progress.
+
+| Where | Options | Effect |
+|---|---|---|
+| Bea | "About your sketchbook…" / "Save me a seat" / "I need a little time alone" / "Maybe later" | Lunch choice changes the ending's opening line, the park drop zones, and the recap |
+| Bea's drawer | "Bea carries her book" / "I'll carry it for you" | Whether the sketchbook goes in your box; ending lines differ |
+| Manager | "I'm going to pass" / "Leave a handoff note" → "Send & move on" | Changes Graham's line and adds an ending line |
+| Elevator | "One more look around" / "Check my box" / "Leave Almost Friday" | Leaving starts the ending |
 
 ### 8.4 Notebook, journal, hints **[FROM BUILD]**
 Chapter progress, journal tasks with checkmarks, a Note to Self, pocket items (e.g., supply token), hint button, "Focus hints on Bea's sketchbook".
-**[DECIDE]** Hint ladder: how many tiers, and do they ever give the full answer?
+**Hint ladder:** three tiers for each puzzle step. Tier 1 is a gentle pointer, tier 2 narrows it down, and tier 3 always gives the full answer, so nobody gets stuck (pillar 1). Example (first packing step): "Different shapes can share a small space. Try changing how one faces." → "The plant leaves a narrow strip beside it. Could the mug use that strip?" → "Rotate the mug once so it is 1×2, then place it beside the 2×2 plant."
 
 ### 8.5 Items in pocket **[FROM BUILD]**
 Supply token: "Use it at the lower drawer."
@@ -116,24 +125,26 @@ Off by default; toggle in menu. **[DECIDE]** Music direction, SFX list.
 Auto-save on device; "Continue your last day"; restart anytime.
 
 ## 9. Progression map
-Fill this as a table of **chapters** (each: id, title, goal text, trigger to start, completion condition, new unlocks). Chapter 0 is known.
+Four chapters, as built. The chapter shown is worked out from progress (it isn't saved separately).
 
 | # | Title | Goal text | Starts when | Done when | Unlocks |
 |---|---|---|---|---|---|
-| 00 | MAKE A LITTLE ROOM | "Pack something worth keeping." / "Start with your plant." | New game | plant + mug packed | Supplies, Lobby doors |
-| 01 | **[DECIDE]** | | | | |
-| 02 | | | | | |
-| … | | | | | |
+| 00 | MAKE A LITTLE ROOM | "Pack something worth keeping." → "Make room for a second keepsake." | New game | Plant + mug packed in the small 3×2 box | Full 6×4 box; Supplies and Lobby (until then: "Room for the plant and mug first.") |
+| 01 | PERSONAL EFFECTS | "Take a look around. Keep what matters." → "Investigate the printer jam." → "Find a way to release the printer tray." | Ch. 00 done | Printer tray opened with the lever | Exit slip, supply token (optional: Bea's sketchbook) |
+| 02 | EXIT STRATEGY | "Pack your exit slip. Graham will need it." → "Bring your exit slip to the lobby." / "Pack for the trip home. Show Graham your exit slip." | Printer opened | Graham stamps the exit slip | Goose sticker, elevator |
+| 03 | YOUR NEXT CHAPTER | "Choose what comes with you. Then head outside." | Graham clears you | "Leave Almost Friday" at the elevator | Park ending |
+
+Optional thread (any time after ch. 01): use the supply token on Bea's lower drawer to return her sketchbook.
 
 ## 10. Endings **[FROM BUILD]**
-One ending: the park, "Room for what comes next." Pip sits on a bench with Bea, who holds the rescued sketchbook. You place your kept items at three spots (bench / beside Bea / at our feet), then "Settle in with Bea". Recap: "What came with you", "You kept N things", plus a caption. "Another last day" restarts.
-**[DECIDE]** Are there variants based on what you kept? Is the caption keyed to the count? Write the ending caption tiers:
+One place: the park, "Room for what comes next." You can set your kept items down at the bench, at your feet, or beside Bea (only if you joined her). Unpacking is optional. Then "Settle in…" ends on "No rush. We're staying a while." "Another last day" restarts.
 
-| Kept | Caption |
-|---|---|
-| few | |
-| some | |
-| many | |
+**The ending is written from *which* things you kept, not how many:**
+- **Opening line, by lunch choice.** Joined Bea: "Bea saves the shady end of the bench. Tuesday lunch club has moved." Alone: "Pip finds a quiet bench. For a moment, being alone feels like having room."
+- **One memory line per kept item:** plant, mug (two versions, with or without Bea), poster, photo, award, sketchbook, sticker.
+- **Combinations.** Photo + sketchbook: "An old photograph and a fresh page: there can be another lunch club." Award picked up but left behind: "…The six weeks that earned it still happened." Nothing kept: "Pip's paws are lighter. The memories do not need a box."
+- **Bea carries her own book** and **the Manager handoff sent or declined** each add a line.
+- **Recap tag:** "You kept some company, too." (joined Bea) or "An afternoon of your own." (alone).
 
 ## 11. Copy & voice guide
 - Short sentences. Understatement. One joke per beat, then a kind line.
@@ -166,3 +177,10 @@ Maintain here as a numbered list. Agents also log questions they hit in `specs/O
 | Date | Change |
 |---|---|
 | 2026-10-10 | Draft pre-filled from the build's HTML shell |
+| 2026-10-10 | §9 chapter map adopted as built (from proposal 001) |
+| 2026-10-10 | §8.3 choices adopted as built: choices may change the ending |
+| 2026-10-10 | §8.4 hint ladder: 3 tiers, last gives the full answer |
+| 2026-10-10 | §10 ending keyed to which items you kept + lunch/Manager choices (count tiers dropped) |
+| 2026-10-10 | §6 rooms matched to the game (printer is in Supplies) |
+| 2026-10-10 | §4 arc: printer is the required middle; Bea's sketchbook is optional |
+| 2026-10-10 | CEO broadcast is set dressing (noted in §6), not a §5 character |
