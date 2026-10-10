@@ -567,8 +567,10 @@ body:has(#game-shell[data-screen="start"]) #screen-backdrop{display:block}
 #scene-story:has(#scene-line:empty) #box-waiting:empty{display:none}
 @media(max-width:720px){#scene-story:has(#scene-line:empty) .box-control{max-width:min(280px,calc(100vw - 48px))}#scene-story:has(#scene-line:empty) #box-waiting{max-width:150px;flex-wrap:wrap;overflow:visible}}
 /* Packed keepsakes retain the same illustration scale as their placement preview. */
-#grid .packed-item{display:flex;align-items:center;justify-content:center;padding:4px;overflow:hidden;border:2px solid #6e8e77;border-radius:7px;box-shadow:none;gap:0}
-#grid .packed-item .item-art{display:block;width:70%;height:70%;min-width:0;min-height:0;max-width:none;max-height:none;flex-shrink:0;background-size:contain;background-position:center;background-repeat:no-repeat}
+#grid .packed-item{display:flex;align-items:center;justify-content:center;padding:4px;overflow:hidden;border:2px solid #6e8e77;border-radius:7px;box-shadow:none;gap:0;container-type:size}
+/* Sprite cells are square: size from the tile's shorter side so 1×2 / 3×2 / 4×1 tiles don't stretch the art.
+   Keep the sheet's background-size/position from .item-art-* (contain would show the whole sheet). */
+#grid .packed-item .item-art{display:block;width:min(70cqw,70cqh);height:min(70cqw,70cqh);min-width:0;min-height:0;max-width:none;max-height:none;flex-shrink:0}
 #grid .packed-item .item-label{display:none;position:absolute;left:50%;bottom:5px;transform:translateX(-50%);max-width:calc(100% - 8px);padding:3px 5px;background:#fffaf0ec;border-radius:4px;font-size:12px;line-height:1.2;text-align:center;pointer-events:none}
 #grid .packed-item:is(:hover,:focus-visible) .item-label{display:block}
 #grid .packed-item.rule-issue{border-color:#a5752e}
