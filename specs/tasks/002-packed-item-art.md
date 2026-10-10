@@ -11,14 +11,15 @@ Reported by the designer 2026-10-10 (art "stretched out funny" in non-square til
 
 ## Out of scope
 - Redrawing or re-encoding item art.
-- Art sizing anywhere other than the box grid (shelf, scene, park).
+- Art sizing outside the box grid and its placement ghost (shelf, scene, park).
 
 ## Acceptance criteria
 - [x] Each packed tile shows only its item's sprite cell from `items.webp` (4×3 sheet of square cells)
 - [x] The art is square, ~70% of the tile's shorter side, centred, in every tile shape and rotation
-- [x] The full-mug water mark and the hover label still display
+- [x] The full-mug water mark still displays (hover label rule untouched; not separately tested)
 - [x] No console errors
 - [x] Checked at 360px and 1280px widths
+- [x] Follow-up (designer, same day): the drag/placement ghost (`#packing-ghost`) uses the same square sizing, so moving an item doesn't stretch it (checked with the 4×1 lever)
 
 ## Golden-path checklist (tick when verified)
 Not re-run: CSS-only change scoped to `#grid .packed-item`. Verified with a restored mid-game save (plant 2×2, mug 1×2 full, poster 3×1, award 3×2, sketchbook 3×2).

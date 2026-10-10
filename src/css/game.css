@@ -506,8 +506,9 @@ body:has(#game-shell[data-screen="start"]) #screen-backdrop{display:block}
 #grid[data-rule='award']{border-bottom-color:#e3b64e}
 #grid .packed-item.rule-issue{outline:2px solid #a5752e;outline-offset:-3px}
 .rule-symbol{position:absolute;right:2px;top:2px;background:#efcf8c;color:#493619;border-radius:50%;width:20px;height:20px;font-weight:bold}
-#packing-ghost{display:grid;place-items:center}
-#packing-ghost>.item-art{width:70%;height:70%;opacity:.6}
+#packing-ghost{display:grid;place-items:center;container-type:size}
+/* Same square sizing as packed tiles (see #grid .packed-item .item-art) so dragging doesn't stretch the sprite. */
+#packing-ghost>.item-art{width:min(70cqw,70cqh);height:min(70cqw,70cqh);opacity:.6}
 #packing-ghost>span:not(.item-art){position:absolute;right:3px;top:3px;background:#fffaf0;padding:1px 5px;border-radius:4px}
 #packing-ghost.invalid{animation:blocked-fit .18s ease 2}
 @keyframes blocked-fit{50%{translate:3px 0}}
