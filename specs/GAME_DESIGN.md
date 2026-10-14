@@ -35,7 +35,12 @@ Proposed from the tone of the build; edit to match your intent.
 **Premise [FROM BUILD]:** Your position has been eliminated. Your plant has not. Your last day: pack a personal box, say goodbye, get past security, and exit.
 
 **Arc (current build):**
-1. Opening · make a little room: bring two keepsakes (plant, mug) **[FROM BUILD]**
+1. Opening · make a little room: bring two keepsakes (plant, mug) **[FROM BUILD]**. The opening scene (decided 2026-10-13):
+   1. **Quiet start.** The game opens on the office with no instructions. Pip stands by the left desk (Pip's desk) holding the box. After a moment the left monitor lights up with "Calendar invite · Quick catch-up" and a subtle pulse. Objective: "Check your computer." The room tabs are hidden and other objects can't be used yet; the menu stays available.
+   2. **The news.** Clicking the monitor (anywhere on its screen, by mouse, touch or keyboard) opens a message from **People Operations**: "We've optimized the concept of you." → Continue. It can only open once.
+   3. **Pip's reaction.** The message closes, Pip glances toward the desk plant, and a speech line appears near Pip: "Guess we're both taking this personally." The player advances it; a fast double-click can't skip both beats.
+   4. **Plant first.** Objective: "Start with your plant." The plant gets a gentle highlight. Clicking it lifts it off the desk and settles it into Pip's box (instant or a short fade with reduced motion), and it is no longer on the desk. From here the opening works as built: the 3×2 plant + mug packing tutorial, then the rest of the office.
+   - Collecting and packing work as they do now. There's no Keep / Leave choice.
 2. Middle · fix the printer jam (required): water softens the label, the tray lever releases the exit slip and a supply token. Optional: use the token on Bea's lower drawer to give her sketchbook back ("Helping me is optional.") **[FROM BUILD]**
 3. Departure · security (Graham), exit cleared, leave the building **[FROM BUILD]**
 4. Ending · the park: settle on a bench with Bea; the things you kept come with you **[FROM BUILD]**
@@ -57,7 +62,7 @@ Proposed from the tone of the build; edit to match your intent.
 **[DECIDE]** For each: one-sentence want, one-sentence flaw, one signature phrase.
 
 ## 6. World & locations
-Three areas, switched via a room nav and floor doors. **[FROM BUILD]**
+Three areas. **Moving between rooms (decided 2026-10-13):** no Desk / Supplies / Lobby tabs. Each doorway has one clear exit arrow; Pip carries the box through it, with a short fade between rooms. Exits stay locked until the plant and mug are packed, as now.
 | Room | Caption | Purpose | Contents | Status |
 |---|---|---|---|---|
 | **Desk** | "YOUR DESK · FOR NOW" | Start; pick keepsakes | Plant, Values mug, Team poster, Team photo, Excellence award, Manager's message | [FROM BUILD] |
@@ -184,3 +189,4 @@ Maintain here as a numbered list. Agents also log questions they hit in `specs/O
 | 2026-10-10 | §6 rooms matched to the game (printer is in Supplies) |
 | 2026-10-10 | §4 arc: printer is the required middle; Bea's sketchbook is optional |
 | 2026-10-10 | CEO broadcast is set dressing (noted in §6), not a §5 character |
+| 2026-10-13 | §4 opening scene: glowing monitor invite, People Operations line, Pip's reaction, plant lifts into the box. §6: exit arrows replace room tabs. Collecting and packing unchanged (no Keep/Leave) |
