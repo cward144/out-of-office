@@ -31,4 +31,6 @@ Opening played by mouse and keyboard; rest of the path scripted against the engi
 - [x] Park ending → "Another last day" restarts cleanly (and replays the opening)
 
 ## Notes
+- Revised 2026-10-14 after the designer shared mockups: close-up camera on Pip's desk, invite card on the screen, Pip beside the drawers (start position 38,50), compact › bubble, objective pill. Re-checked keyboard path, plant pickup, 360px and desktop, console clean.
+- Art needed later (not in this task): Pip looking up at the monitor; the box set down on the floor beside Pip.
 - Left monitor screen in logical coordinates: x 16–28, y 7–16.5 (measured against the plant's known position).

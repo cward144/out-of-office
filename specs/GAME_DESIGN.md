@@ -40,6 +40,7 @@ Proposed from the tone of the build; edit to match your intent.
    2. **The news.** Clicking the monitor (anywhere on its screen, by mouse, touch or keyboard) opens a message from **People Operations**: "We've optimized the concept of you." → Continue. It can only open once.
    3. **Pip's reaction.** The message closes, Pip glances toward the desk plant, and a speech line appears near Pip: "Guess we're both taking this personally." The player advances it; a fast double-click can't skip both beats.
    4. **Plant first.** Objective: "Start with your plant." The plant gets a gentle highlight. Clicking it lifts it off the desk and settles it into Pip's box (instant or a short fade with reduced motion), and it is no longer on the desk. From here the opening works as built: the 3×2 plant + mug packing tutorial, then the rest of the office.
+   - **Framing (decided 2026-10-14, from the opening mockups):** the opening is a close-up of Pip's desk (same room, zoomed in), with Pip beside the drawers, the invite shown as a card on the monitor screen, a small objective pill, and Pip's line as a compact bubble with a ›. The camera eases back out to the whole office when the plant step starts. Not yet possible without new art: Pip looking up at the monitor, the box set down on the floor.
    - Collecting and packing work as they do now. There's no Keep / Leave choice.
 2. Middle · fix the printer jam (required): water softens the label, the tray lever releases the exit slip and a supply token. Optional: use the token on Bea's lower drawer to give her sketchbook back ("Helping me is optional.") **[FROM BUILD]**
 3. Departure · security (Graham), exit cleared, leave the building **[FROM BUILD]**
@@ -189,4 +190,5 @@ Maintain here as a numbered list. Agents also log questions they hit in `specs/O
 | 2026-10-10 | §6 rooms matched to the game (printer is in Supplies) |
 | 2026-10-10 | §4 arc: printer is the required middle; Bea's sketchbook is optional |
 | 2026-10-10 | CEO broadcast is set dressing (noted in §6), not a §5 character |
+| 2026-10-14 | §4 opening framing: close-up on Pip's desk per the mockups; eases out for the plant step |
 | 2026-10-13 | §4 opening scene: glowing monitor invite, People Operations line, Pip's reaction, plant lifts into the box. §6: exit arrows replace room tabs. Collecting and packing unchanged (no Keep/Leave) |
