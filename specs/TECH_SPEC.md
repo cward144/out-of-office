@@ -11,7 +11,7 @@
 - ✅ Art is WebP raster (watercolor backdrops and sprites) plus CSS/inline SVG for small icons.
 - ✅ Fonts: DM Sans (body) and Space Grotesk, self-hosted as variable `woff2` (weights 400–700, latin + latin-ext) in `src/assets/fonts/`, declared with `@font-face` at the top of `game.css`. No font CDN.
 - ⬜ Runtime dependencies: none allowed without a spec change.
-- ⬜ Hosting: any static host (GitHub Pages, Netlify, Cloudflare Pages). Must work from a plain static server; `file://` is best-effort.
+- ✅ Hosting: **GitHub Pages**, https://cward144.github.io/out-of-office/. `.github/workflows/pages.yml` uploads `src/` as-is on every push to `main` (no build step). Must still work from any plain static server; `file://` is best-effort. All asset paths stay relative so the `/out-of-office/` sub-path works.
 
 ## 2. Repo layout
 ```
