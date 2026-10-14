@@ -590,3 +590,28 @@ body:has(#game-shell[data-screen="start"]) #screen-backdrop{display:block}
 #play .mission-actions:empty{display:none}
 @media(max-width:720px){#game-menu{top:60px;right:8px}}
 @media(max-height:499px) and (orientation:landscape){#game-menu{top:56px;max-height:calc(100dvh - 64px)}}
+/* Opening (GAME_DESIGN §4): only the monitor, Pip and the menu are live until Pip's reaction is done. */
+#game-shell[data-opening] #play .rooms,#game-shell[data-opening] #rooms-note,#game-shell[data-opening] .floor-door,#game-shell[data-opening] #box-open,#game-shell[data-opening] #pip-box,#game-shell[data-opening] #notebook-toggle,#game-shell[data-opening] #scene-story{visibility:hidden}
+/* display:none, not visibility: tutorial labels force themselves visible. */
+#game-shell[data-opening] #hotspots{display:none}
+#game-shell[data-opening] .tutorial-target{outline:none;animation:none}
+#game-shell[data-opening] #scene-props{pointer-events:none}
+#game-shell[data-opening='reaction'] #play .mission{visibility:hidden}
+#game-shell[data-opening] #scene{cursor:default}
+.monitor-invite{position:absolute;z-index:5;left:16.2%;width:11.6%;min-width:56px;min-height:44px;padding:2px 4px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;border:0;border-radius:4px;background:radial-gradient(ellipse at center,#fff7dcf2 0%,#f6dfa0e0 60%,#e9c66fcc 100%);box-shadow:0 0 0 2px #e6c76c,0 0 18px 6px #f3d27a99;color:#243247;font-size:clamp(7px,1vw,12px);line-height:1.15;text-align:center;cursor:pointer;animation:invite-pulse 1.8s ease-in-out infinite}
+.monitor-invite[hidden]{display:none}
+.monitor-invite .invite-kicker{font-size:.8em;letter-spacing:.04em;text-transform:uppercase;opacity:.8}
+.monitor-invite .invite-title{font-weight:700}
+.monitor-invite .invite-open{margin-top:2px;padding:1px 6px;border-radius:3px;background:#243247;color:#fffaf0;font-size:.85em}
+.monitor-invite:focus-visible{outline:3px solid #243247;outline-offset:3px}
+@keyframes invite-pulse{0%,100%{box-shadow:0 0 0 2px #e6c76c,0 0 10px 2px #f3d27a66}50%{box-shadow:0 0 0 2px #e6c76c,0 0 22px 8px #f3d27aaa}}
+.pip-speech{position:absolute;z-index:7;transform:translate(-20%,calc(-100% - var(--pip-h,120px) - 10px));width:max-content;max-width:min(240px,70vw);padding:10px 12px;background:#fffaf0;border:1px solid #24324740;border-radius:12px;box-shadow:0 4px 14px #24324722;color:#243247;font-size:15px;line-height:1.4}
+.pip-speech[hidden]{display:none}
+/* Narrow screens: the art is short, so the line sits below Pip instead of under the header. */
+@media(max-width:720px){.pip-speech{transform:translate(-20%,14px)}.pip-speech::after{bottom:auto;top:-8px;border:8px solid transparent;border-top:0;border-bottom-color:#fffaf0}}
+.pip-speech::after{content:'';position:absolute;left:18%;bottom:-8px;border:8px solid transparent;border-bottom:0;border-top-color:#fffaf0}
+.pip-speech p{margin:0 0 8px}
+.pip-speech button{min-height:44px;padding:8px 16px;font-size:14px}
+#pip.glance #pip-art{animation:pip-glance .6s ease-out 1}
+@keyframes pip-glance{0%{transform:scaleX(var(--facing,1)) rotate(0)}40%{transform:scaleX(var(--facing,1)) rotate(-5deg)}100%{transform:scaleX(var(--facing,1)) rotate(0)}}
+@media(prefers-reduced-motion:reduce){.monitor-invite,#pip.glance #pip-art{animation:none}}
