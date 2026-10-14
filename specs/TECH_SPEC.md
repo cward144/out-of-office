@@ -8,6 +8,7 @@
 ## 1. Stack
 - ✅ Static site: HTML5 + CSS + vanilla JavaScript. **No framework, no bundler, no build step.**
 - ✅ Scripts loaded with `<script defer>` in this order: `engine.js`, `navigation.js`, `camera.js`, `game.js`.
+- ✅ Cache-busting: CSS/JS URLs in `index.html` carry `?v=<tag>` (currently `004-opening-4`). Bump the tag whenever `src/css` or `src/js` changes, or returning players get stale files.
 - ✅ Art is WebP raster (watercolor backdrops and sprites) plus CSS/inline SVG for small icons.
 - ✅ Fonts: DM Sans (body) and Space Grotesk, self-hosted as variable `woff2` (weights 400–700, latin + latin-ext) in `src/assets/fonts/`, declared with `@font-face` at the top of `game.css`. No font CDN.
 - ⬜ Runtime dependencies: none allowed without a spec change.
@@ -50,6 +51,7 @@ Keep one responsibility per file. If `game.js` grows past ~1500 lines, propose a
 - ✅ **Hotspots are built at runtime** from the `spots` table in `game.js` (`[id, label, x, y, walkX, walkY]` per room), not static HTML.
 - ✅ State is a single plain object (`OfficeGame.fresh()`) serialized to JSON: `{version, started, room, collected[], packed{id:{x,y,r}}, flags{}, hints{}, position{x,y}, ended, park{}, settled, parkLast}`. Progress is driven by boolean `flags` (e.g. `tutorial`, `label`, `water`, `printer`, `bea`, `gate`, `invited`, `boss`). UI re-renders from state via `render()`.
 - ✅ Chapter is derived from flags, not stored: 00 until `tutorial`, 01 until `printer`, 02 until `gate`, then 03.
+- ✅ **Opening** (GAME_DESIGN §4, task 004): while `!flags.inviteRead`, `game.js` runs a UI-only `openingStep` (`quiet` → `invite` → `message` → `reaction`) mirrored on `#game-shell[data-opening]`. CSS hides the room tabs, doors, box, notebook, hotspots and story strip; JS guards `move`, `interactAtSpot`, `room`, `openPendingBox`, `requestHint` and the B/arrow keys. The step isn't saved: reloading restarts from `quiet`. `frameOpening()` zooms `#scene` (CSS transform, `--zoom` var) onto logical region x 2–48, y 2–58 (Pip's desk) and eases back out (`.opening-release`) when the opening ends. `#monitor-invite` covers the left monitor screen (logical x 16.2–27.8, y 6.8–16.5) and sizes its card in container units with a px/`--zoom` minimum so it stays readable on phones. `#pip-speech` follows Pip via `paintPip()`; `fitSpeech()` nudges it on-screen. Opening UI text inside the zoomed world divides px sizes by `--zoom`. Finishing sets `inviteRead` and hands over to the plant tutorial.
 
 ## 4. Coding style
 - ES2020+, `"use strict"`, no modules required. ✅ Existing namespace: each file is an IIFE that exports one global — `OfficeGame` (engine), `OfficeNav` (navigation), `OfficeCamera` (camera); `game.js` consumes them as `G`, `N`, `C`. The non-UI files also `module.exports` their API when `module` exists, so they can be loaded by a test script. Reuse these; don't add new globals.
@@ -71,8 +73,8 @@ Keep one responsibility per file. If `game.js` grows past ~1500 lines, propose a
 - "Show labels" toggle must keep working: it flips `#scene[data-labels]` between `quiet` and `loud`.
 
 ## 6. Persistence
-- ✅ Progress saved on-device ("Progress saved on this device"); "Continue your last day" restores it. Storage is `localStorage`, key **`out-of-office-v1`** (the key name is historical; the payload is `version: 2`). The "Show labels" preference is stored separately under `out-of-office-labels`.
-- ✅ `save()` wraps `setItem` in try/catch and shows `#save-warning` on failure. Load goes through `OfficeGame.validate()`, which accepts versions 1 and 2, whitelists flags/hint keys, replays every packed item through `pack()` (rejecting the save if any placement is invalid), and migrates v1 → v2 (sets `tutorial`, derives `favorKnown`/`favorFocus`/`lunchChosen`). Invalid saves return `null` and the game starts fresh.
+- ✅ Progress saved on-device ("Progress saved on this device"); "Continue your last day" restores it. Storage is `localStorage`, key **`out-of-office-v1`** (the key name is historical; the payload is `version: 3`). The "Show labels" preference is stored separately under `out-of-office-labels`.
+- ✅ `save()` wraps `setItem` in try/catch and shows `#save-warning` on failure. Load goes through `OfficeGame.validate()`, which accepts versions 1–3, whitelists flags/hint keys, replays every packed item through `pack()` (rejecting the save if any placement is invalid), and migrates v1 → v2 (sets `tutorial`, derives `favorKnown`/`favorFocus`/`lunchChosen`) and v1/v2 → v3 (sets `inviteRead` for started games, so existing players skip the new opening). Invalid saves return `null` and the game starts fresh.
 - Wrap all storage access in try/catch. On failure show `#save-warning` (role="alert") and keep playing in memory.
 - Save data has a `version` integer. **Any change to the save shape requires bumping `version` and a migration function.** Never throw away a player's save silently.
 - Restart wipes the save only after confirmation.
