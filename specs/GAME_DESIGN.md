@@ -197,6 +197,7 @@ Maintain here as a numbered list. Agents also log questions they hit in `specs/O
 | 2026-10-10 | §6 rooms matched to the game (printer is in Supplies) |
 | 2026-10-10 | §4 arc: printer is the required middle; Bea's sketchbook is optional |
 | 2026-10-10 | CEO broadcast is set dressing (noted in §6), not a §5 character |
+| 2026-10-16 | §12 all items share the designer's keepsake art style (plus new slip, token and lever drawings) |
 | 2026-10-16 | §4 opening poses (Pip looks up at the monitor, sets the box down, kneels to pack the plant); §5 new Pip and Graham looks |
 | 2026-10-15 | §10 park ending look (blanket, sitting Pip and Bea, keepsakes on the blanket, closing card); §12 park art |
 | 2026-10-15 | §6, §12 new Supplies and Lobby paintings with doorways |

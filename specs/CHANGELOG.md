@@ -2,6 +2,7 @@
 
 One line per merged task, newest first: `YYYY-MM-DD · NNN · summary`
 
+- 2026-10-16 · 012 · All ten items use the new watercolor art everywhere (rooms, box, effects); lever hangs long on the pegboard
 - 2026-10-16 · 011 · Second walking step: walk cycles step, stand, other step, stand
 - 2026-10-16 · 010/006 · New Pip (rooms, walking frames, start screen, portrait) and Graham; opening poses; Pip kneels to pack the plant
 - 2026-10-15 · 009 · New park ending: designer's painting, sitting Pip and Bea, keepsakes on the blanket, mockup closing card (EB Garamond Italic)
