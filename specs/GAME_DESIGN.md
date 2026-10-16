@@ -144,7 +144,7 @@ Four chapters, as built. The chapter shown is worked out from progress (it isn't
 Optional thread (any time after ch. 01): use the supply token on Bea's lower drawer to return her sketchbook.
 
 ## 10. Endings **[FROM BUILD]**
-One place: the park, "Room for what comes next." You can set your kept items down at the bench, at your feet, or beside Bea (only if you joined her). Unpacking is optional. Then "Settle in…" ends on "No rush. We're staying a while." "Another last day" restarts.
+One place: the park, "Room for what comes next." **(Look decided 2026-10-15, from the designer's mockup.)** Pip sits on a picnic blanket in front of the bench, holding the values mug if it came along (otherwise paws in lap); Bea sits beside Pip opening a thermos (only if you joined her). Every kept keepsake rests on the blanket in its own spot; Bea's own sketchbook sits beside her if she carried it. "Arrange keepsakes" lets you move any of them to the bench, at your feet, or beside Bea; moving the mug takes it out of Pip's hands. The closing card shows the line in an italic serif over a thin gold rule, with the arrange button beneath. Then "Settle in…" ends on "No rush. We're staying a while." "Another last day" restarts.
 
 **The ending is written from *which* things you kept, not how many:**
 - **Opening line, by lunch choice.** Joined Bea: "Bea saves the shady end of the bench. Tuesday lunch club has moved." Alone: "Pip finds a quiet bench. For a moment, being alone feels like having room."
@@ -164,7 +164,9 @@ Soft watercolor illustration; warm paper tones; deep navy UI chrome (`#243247`) 
 
 **Supplies and Lobby (decided 2026-10-15):** the designer's new paintings replace the originals, made from their mockups as clean tall plates: every room has painted doorways that look into the neighbouring room; the water cooler is fully visible; no packing tape (not part of the game). Accepted as is: the glimpse of Supplies through the Lobby doorway shows a terracotta floor (Supplies itself has wood).
 
-**Desk room (decided 2026-10-15):** the designer's new desk-room painting replaces the original. Pip's desk is pulled forward by the window; the other desk sits back in a nook; doorway on the right to Supplies. A matching close-up painting is used for the opening. Collectibles are separate sprites placed as in the mockups: mug left of the keyboard, plant on the desk's right corner, scroll on the shelf top, photo on the middle shelf, trophy on the other desk. Backdrops are delivered as clean plates (no characters, UI or collectibles; monitors off), painted taller than widescreen so they can be cropped instead of stretched: full rooms 4:3, opening close-ups square.
+**Desk room (decided 2026-10-15):** the designer's new desk-room painting replaces the original. Pip's desk is pulled forward by the window; the other desk sits back in a nook; doorway on the right to Supplies. A matching close-up painting is used for the opening. Collectibles are separate sprites placed as in the mockups: mug left of the keyboard, plant on the desk's right corner, scroll on the shelf top, photo on the middle shelf, trophy on the other desk. **Park (decided 2026-10-15):** the designer's park painting (bench under a blossoming tree, picnic blanket, lake and town beyond), keeping its soft out-of-focus foreground flowers and petals by choice. Pip and Bea sitting, and the seven keepsakes, are separate watercolor cut-outs in the same style. The goose stays a sticker; the trophy is part of the keepsake art.
+
+Backdrops are delivered as clean plates (no characters, UI or collectibles; monitors off), painted taller than widescreen so they can be cropped instead of stretched: full rooms 4:3, opening close-ups square.
 **[DECIDE]** Palette list, line quality, reference images (add to `specs/refs/`), what an acceptable new asset looks like.
 
 ## 13. Audio direction
@@ -195,6 +197,7 @@ Maintain here as a numbered list. Agents also log questions they hit in `specs/O
 | 2026-10-10 | §6 rooms matched to the game (printer is in Supplies) |
 | 2026-10-10 | §4 arc: printer is the required middle; Bea's sketchbook is optional |
 | 2026-10-10 | CEO broadcast is set dressing (noted in §6), not a §5 character |
+| 2026-10-15 | §10 park ending look (blanket, sitting Pip and Bea, keepsakes on the blanket, closing card); §12 park art |
 | 2026-10-15 | §6, §12 new Supplies and Lobby paintings with doorways |
 | 2026-10-15 | §3 phones: crop, never stretch; pan to follow Pip. §12 tall clean plates (4:3 rooms, square close-ups) |
 | 2026-10-15 | §12 new desk-room and close-up paintings; §4 opening now dissolves from the close-up into the room |
