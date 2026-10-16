@@ -68,8 +68,8 @@ Three areas. **Moving between rooms (decided 2026-10-13):** no Desk / Supplies /
 | Room | Caption | Purpose | Contents | Status |
 |---|---|---|---|---|
 | **Desk** | "YOUR DESK · FOR NOW" | Start; pick keepsakes | Plant, Values mug, Team poster, Team photo, Excellence award, Manager's message | [FROM BUILD] |
-| **Supplies** | | Fix the printer jam (exit slip + supply token); optional: Bea's sketchbook | The printer, Water cooler, Bea · designer, Tray lever (on its hook), Locked sketchbook drawer | [FROM BUILD] |
-| **Lobby** | | Get past Graham, leave | Graham · security, The elevator, CEO broadcast | [FROM BUILD] |
+| **Supplies** | | Fix the printer jam (exit slip + supply token); optional: Bea's sketchbook | Sunny window, water cooler, printer on a low cabinet, pegboard (the tray lever hangs there), tall shelving, drawer cabinet (Bea's sketchbook is in its bottom-left drawer), Bea. Doorways: left → your desk, right → Lobby | Designer's painting, 2026-10-15 |
+| **Lobby** | | Get past Graham, leave | Tall windows, bench under the wall screen (CEO broadcast), brass lamps, plants, golden elevator; Graham stands beside it. Doorway: left → Supplies | Designer's painting, 2026-10-15 |
 | **Park** | "Room for what comes next." | Ending | Bench, at your feet, beside Bea (only if you joined her) | [FROM BUILD] |
 
 The Lobby's "CEO broadcast" is set dressing, a one-line background joke like the footer, not a character: "The CEO says 'We're a family.' Behind him, someone silently removes a chair. He keeps talking."
@@ -162,6 +162,8 @@ One place: the park, "Room for what comes next." You can set your kept items dow
 ## 12. Art direction **[FROM BUILD]**
 Soft watercolor illustration; warm paper tones; deep navy UI chrome (`#243247`) with cardboard-tan accents (`#e7c38b`). Characters are painted sprites on painted backdrops.
 
+**Supplies and Lobby (decided 2026-10-15):** the designer's new paintings replace the originals, made from their mockups as clean tall plates: every room has painted doorways that look into the neighbouring room; the water cooler is fully visible; no packing tape (not part of the game). Accepted as is: the glimpse of Supplies through the Lobby doorway shows a terracotta floor (Supplies itself has wood).
+
 **Desk room (decided 2026-10-15):** the designer's new desk-room painting replaces the original. Pip's desk is pulled forward by the window; the other desk sits back in a nook; doorway on the right to Supplies. A matching close-up painting is used for the opening. Collectibles are separate sprites placed as in the mockups: mug left of the keyboard, plant on the desk's right corner, scroll on the shelf top, photo on the middle shelf, trophy on the other desk. Backdrops are delivered as clean plates (no characters, UI or collectibles; monitors off), painted taller than widescreen so they can be cropped instead of stretched: full rooms 4:3, opening close-ups square.
 **[DECIDE]** Palette list, line quality, reference images (add to `specs/refs/`), what an acceptable new asset looks like.
 
@@ -193,6 +195,7 @@ Maintain here as a numbered list. Agents also log questions they hit in `specs/O
 | 2026-10-10 | §6 rooms matched to the game (printer is in Supplies) |
 | 2026-10-10 | §4 arc: printer is the required middle; Bea's sketchbook is optional |
 | 2026-10-10 | CEO broadcast is set dressing (noted in §6), not a §5 character |
+| 2026-10-15 | §6, §12 new Supplies and Lobby paintings with doorways |
 | 2026-10-15 | §3 phones: crop, never stretch; pan to follow Pip. §12 tall clean plates (4:3 rooms, square close-ups) |
 | 2026-10-15 | §12 new desk-room and close-up paintings; §4 opening now dissolves from the close-up into the room |
 | 2026-10-14 | §4 opening framing: close-up on Pip's desk per the mockups; eases out for the plant step |
