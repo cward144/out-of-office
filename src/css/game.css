@@ -649,3 +649,11 @@ body:has(#game-shell[data-screen="start"]) #screen-backdrop{display:block}
 @media(prefers-reduced-motion:reduce){#scene[data-camera='cover'] .room-architecture,#scene[data-camera='cover'] .world-space{transition:none}}
 /* A new room or screen size jumps straight to the right view; only Pip's walking pans smoothly. */
 #scene.camera-snap .room-architecture,#scene.camera-snap .world-space{transition:none}
+/* Exit arrows replace the room tabs (GAME_DESIGN §6, task 007). Positioned in JS (placeExits) at the doorway or floor edge. */
+#play .rooms,#rooms-note{display:none}
+#scene .floor-door,#scene .floor-door.left,#scene .floor-door.right{left:auto;right:auto;width:max-content;bottom:auto;transform:translate(-50%,-100%);display:inline-flex;align-items:center;min-height:44px;padding:8px 16px;border:1px solid #24324726;border-radius:999px;background:#fffaf0f2;box-shadow:0 3px 10px #24324722;color:#243247;font-size:14px;font-weight:600;white-space:nowrap;cursor:pointer}
+#scene .floor-door:hover{background:#fff}
+#scene .floor-door:focus-visible{outline:3px solid #243247;outline-offset:2px}
+#scene.room-leave{opacity:0;transition:opacity .2s ease-in}
+@keyframes room-fade{from{opacity:0}to{opacity:1}}
+@media(prefers-reduced-motion:reduce){#scene.room-leave{transition:none}.room-enter{animation:none}}

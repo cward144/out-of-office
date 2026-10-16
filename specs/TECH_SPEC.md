@@ -8,7 +8,7 @@
 ## 1. Stack
 - ✅ Static site: HTML5 + CSS + vanilla JavaScript. **No framework, no bundler, no build step.**
 - ✅ Scripts loaded with `<script defer>` in this order: `engine.js`, `navigation.js`, `camera.js`, `game.js`.
-- ✅ Cache-busting: CSS/JS URLs in `index.html` carry `?v=<tag>` (currently `005-desk-room-12`; image URLs that change in place get their own `?v=`). Bump the tag whenever `src/css` or `src/js` changes, or returning players get stale files.
+- ✅ Cache-busting: CSS/JS URLs in `index.html` carry `?v=<tag>` (currently `007-exits-2`; image URLs that change in place get their own `?v=`). Bump the tag whenever `src/css` or `src/js` changes, or returning players get stale files.
 - ✅ Art is WebP raster (watercolor backdrops and sprites) plus CSS/inline SVG for small icons.
 - ✅ Fonts: DM Sans (body) and Space Grotesk, self-hosted as variable `woff2` (weights 400–700, latin + latin-ext) in `src/assets/fonts/`, declared with `@font-face` at the top of `game.css`. No font CDN.
 - ⬜ Runtime dependencies: none allowed without a spec change.
@@ -39,6 +39,7 @@ Keep one responsibility per file. If `game.js` grows past ~1500 lines, propose a
 
 ## 3. Architecture
 - ✅ **Screens:** `#start`, `#play`, `#ending` sections toggled via `hidden`; current screen in `#game-shell[data-screen]`.
+- ✅ **Exits** (task 007): no room tabs (`#play .rooms` hidden). `exits` in `game.js` lists each room's ways out (`to`, side, logical x/y): desk → Supplies at the painted doorway; Supplies ↔ desk/Lobby and Lobby → Supplies as floor-edge arrows (those paintings have no side doors). `#door-left`/`#door-right` are filled by `renderExits()` and placed by `placeExits()`, which pins an arrow to the screen edge when its doorway is panned out of view. `room(id)` walks Pip to the exit, fades `#scene` out (`.room-leave`, 0.2 s), switches rooms and places Pip just inside the matching exit (`arrivalFrom()`), then fades in. Reduced motion: no fades.
 - ✅ **Rooms:** `desk`, `supply`, `lobby`; current room in `#scene[data-room]`. Room backdrops swap `src` on `#office-art`, `#office-cap`, `#office-floor` (three layers of the same wide image: cap / architecture / floor).
 - ✅ **World space:** `#world-space` is a percentage-based coordinate space (`left`/`top` in %) holding props, hotspots, NPCs, and Pip. Positions are data, not hard-coded in CSS.
 - ✅ **Interactables:** `button.scene-object` (collectable props) and `button.hotspot` (labelled points). Both carry `data-object` / `data-hotspot` ids and are generated from data. Hotspot `top` is derived from `data-world-y`.
