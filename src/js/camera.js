@@ -3,7 +3,19 @@
 // A continuous three-band scene: extend the top edge, retain furniture, adapt the open floor.
 // Logical puzzle coordinates stay unchanged; every actor and pointer uses this projection.
 const artworkRatio=1672/941,worldFraction=.84375,seam=72;
-function layout(width,height,ending=false){
+// Cover mode (task 005): rooms with a tall painting are cropped to fill the screen, never stretched.
+// art = {w,h,coreTop,coreHeight}: image size and where the original 16:9 room ("core") sits in it, as fractions.
+// Logical coordinates stay relative to the core, so obstacles and item spots don't change. focusX pans narrow screens to Pip.
+const clamp=(v,lo,hi)=>Math.min(hi,Math.max(lo,v));
+function coverLayout(width,height,art,focusX){
+ const s=Math.max(width/art.w,height/art.h),iw=art.w*s,ih=art.h*s,worldLeftInImg=iw*(1-worldFraction)/2,worldWidth=iw*worldFraction;
+ const imgLeft=iw<=width?(width-iw)/2:clamp(width/2-(worldLeftInImg+focusX/100*worldWidth),width-iw,0);
+ const coreTop=art.coreTop*ih,coreHeight=art.coreHeight*ih,imgTop=ih<=height?(height-ih)/2:clamp((height-coreHeight)/2-coreTop,height-ih,0);
+ const artTop=imgTop+coreTop,architectureHeight=coreHeight*.72,floorTop=artTop+architectureHeight;
+ return {width,height,top:0,artTop,artHeight:coreHeight,architectureHeight,floorTop,floorHeight:Math.max(1,height-floorTop),worldLeft:imgLeft+worldLeftInImg,worldWidth,safeBottom:floorTop+coreHeight*.28,walkFloor:coreHeight*.28,cover:true,imgLeft,imgTop,imgWidth:iw,imgHeight:ih};
+}
+function layout(width,height,ending=false,art=null,focusX=50){
+ if(art&&!ending)return coverLayout(width,height,art,focusX);
  const compact=height<500&&width>height;
  const artTop=compact?56:width<=1100?112:64;
  const bottom=ending?Math.min(height*.42,340)+24:compact?120:width<=720?276:width<=1100?144:112;
