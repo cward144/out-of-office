@@ -39,8 +39,8 @@ Proposed from the tone of the build; edit to match your intent.
 1. Opening · make a little room: bring two keepsakes (plant, mug) **[FROM BUILD]**. The opening scene (decided 2026-10-13):
    1. **Quiet start.** The game opens on the office with no instructions. Pip stands by the left desk (Pip's desk) holding the box. After a moment the left monitor lights up with "Calendar invite · Quick catch-up" and a subtle pulse. Objective: "Check your computer." The room tabs are hidden and other objects can't be used yet; the menu stays available.
    2. **The news.** Clicking the monitor (anywhere on its screen, by mouse, touch or keyboard) opens a message from **People Operations**: "We've optimized the concept of you." → Continue. It can only open once.
-   3. **Pip's reaction.** The message closes, Pip glances toward the desk plant, and a speech line appears near Pip: "Guess we're both taking this personally." The player advances it; a fast double-click can't skip both beats.
-   4. **Plant first.** Objective: "Start with your plant." The plant gets a gentle highlight. Clicking it lifts it off the desk and settles it into Pip's box (instant or a short fade with reduced motion), and it is no longer on the desk. From here the opening works as built: the 3×2 plant + mug packing tutorial, then the rest of the office.
+   3. **Pip's reaction.** The message closes, Pip sets the box down and looks up at the desk plant with a small, rueful expression (designer's pose), and a speech line appears near Pip: "Guess we're both taking this personally." The player advances it; a fast double-click can't skip both beats.
+   4. **Plant first.** Objective: "Start with your plant." The plant gets a gentle highlight. Clicking it shows Pip kneeling beside his open box, gently lowering the plant in (designer's pose), then standing with the box again; the plant is gone from the desk (instant or a short fade with reduced motion), and it is no longer on the desk. From here the opening works as built: the 3×2 plant + mug packing tutorial, then the rest of the office.
    - **Framing (decided 2026-10-14, from the opening mockups; art added 2026-10-15):** the opening is a close-up of Pip's desk (the designer's close-up painting of the same room), with Pip beside the drawers, the invite shown as a card on the monitor screen, a small objective pill, and Pip's line as a compact bubble with a ›. When the plant step starts, the close-up pulls back and dissolves into the whole office. Not yet possible without new art: Pip looking up at the monitor, the box set down on the floor.
    - Collecting and packing work as they do now. There's no Keep / Leave choice.
 2. Middle · fix the printer jam (required): water softens the label, the tray lever releases the exit slip and a supply token. Optional: use the token on Bea's lower drawer to give her sketchbook back ("Helping me is optional.") **[FROM BUILD]**
@@ -55,9 +55,9 @@ Proposed from the tone of the build; edit to match your intent.
 ## 5. Characters
 | Character | Who | Role in game | Voice | Status |
 |---|---|---|---|---|
-| **Pip** | Raccoon in a sweater vest, "formerly essential" | Player character | Dry, earnest, a little stunned | [FROM BUILD] |
+| **Pip** | Raccoon in a cream collared shirt and navy sweater vest with cream trim (always the same outfit), "formerly essential" | Player character | Dry, earnest, a little stunned | Look decided 2026-10-16 (designer's reference sheet). Opening poses: looking up at the monitor holding the box; box set down, looking up at the plant (rueful); kneeling to pack the plant. Walking keeps the calm half-smile |
 | **Bea** | Rabbit, designer; gave Pip a plant cutting on day one | Friend; her sketchbook must be rescued; ends the game beside Pip | Warm, practical | [FROM BUILD] |
-| **Graham** | Goose, security | Gatekeeper at the exit | **[DECIDE]** | [FROM BUILD] name + role only |
+| **Graham** | Goose, security; light blue shirt, navy tie, navy security vest with pockets, gold badge, walkie-talkie | Gatekeeper at the exit | **[DECIDE]** | Look decided 2026-10-16 (designer's drawing); voice still open |
 | **The Manager** | Heard via "Manager's message" hotspot | Offstage antagonist-ish; the corporate voice | **[DECIDE]** | [FROM BUILD] |
 | **The Plant** | Desk plant, outgrown three pots | Emotional anchor | Silent | [FROM BUILD] |
 
@@ -197,6 +197,7 @@ Maintain here as a numbered list. Agents also log questions they hit in `specs/O
 | 2026-10-10 | §6 rooms matched to the game (printer is in Supplies) |
 | 2026-10-10 | §4 arc: printer is the required middle; Bea's sketchbook is optional |
 | 2026-10-10 | CEO broadcast is set dressing (noted in §6), not a §5 character |
+| 2026-10-16 | §4 opening poses (Pip looks up at the monitor, sets the box down, kneels to pack the plant); §5 new Pip and Graham looks |
 | 2026-10-15 | §10 park ending look (blanket, sitting Pip and Bea, keepsakes on the blanket, closing card); §12 park art |
 | 2026-10-15 | §6, §12 new Supplies and Lobby paintings with doorways |
 | 2026-10-15 | §3 phones: crop, never stretch; pan to follow Pip. §12 tall clean plates (4:3 rooms, square close-ups) |
