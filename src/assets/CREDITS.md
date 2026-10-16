@@ -10,6 +10,8 @@ How each asset was made (TECH_SPEC §7). Add a row when an asset is added or rep
 | `lobby-room-tall.webp` | Designer-supplied, AI-assisted illustration (4:3 clean plate) | 2026-10-15 | Designer-directed | Lobby (task 008), from the designer's mockup. |
 | `park/park-room-tall.webp` | Designer-supplied, AI-assisted illustration (4:3) | 2026-10-15 | Designer-directed | Park ending plate (task 009), from the designer's mockup. |
 | `park/pip-sitting.webp`, `park/pip-sitting-mug.webp`, `park/bea-sitting.webp` | Designer-supplied, AI-assisted cut-outs (transparent) | 2026-10-15 | Designer-directed | Sitting poses for the park. |
+| `pip/*.webp` | Designer-supplied, AI-assisted (transparent) | 2026-10-16 | Designer-directed | Pip standing, step, opening poses, packing pose, portrait (task 010). Not yet compressed (no local WebP encoder). |
+| `graham/*.png` | Designer-supplied, AI-assisted; magenta keyed out and scaled by the agent | 2026-10-16 | Designer-directed | Graham standing and portrait (task 010). |
 | `park/keepsake-*.png` | Designer-supplied, AI-assisted keepsake sheet, cut apart and scaled to 280 px by the agent | 2026-10-15 | Designer-directed | PNG because no local WebP encoder. |
 | Other `*.webp` (Pip, Bea, coworkers, items) | Unknown (imported from the original build) | before 2026-10-10 | Unknown | See OPEN_QUESTIONS Q-007. |
 | `fonts/*.woff2` | Google Fonts (OFL 1.1) | 2026-10-10 | No | See `fonts/README.md`. |
