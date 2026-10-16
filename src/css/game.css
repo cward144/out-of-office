@@ -12,8 +12,8 @@
 .hotspot{z-index:8}.npc{pointer-events:auto;padding:0;border:0;border-radius:0;background-color:transparent;cursor:pointer}.npc:hover{background-color:transparent;background-image:url('../assets/coworkers.webp');background-size:200% 100%;transform:translate(-50%,-100%);filter:drop-shadow(0 5px 4px #24324755)}.npc:focus-visible{outline:3px solid #7762a5;outline-offset:5px}.grid.placing{cursor:crosshair}.grid.placing .packed-item{pointer-events:none;opacity:.78}.grid.placing .cell{cursor:crosshair}.grid.placing .cell:hover{background:#ffffff88}.packing-tools{align-items:center}.packing-tools #cancel-placement{border-color:#7762a5;color:#604d83}#park-response{font-size:18px;line-height:1.6;max-width:650px;min-height:3em;margin:18px auto;color:#334c3d}#settle-in{margin:8px auto 16px}.keepsake.placed{opacity:.8}.scene-caption{pointer-events:none}@media(max-width:720px){#park-response{font-size:16px}.hotspot{font-size:12px;min-height:38px}.floor-door{z-index:9}}
 
 /* Illustrated keepsakes share one atlas across the shelf, box and park. */
-.item-art{display:inline-block;width:44px;height:44px;flex:0 0 auto;background-image:url('../assets/items.webp');background-size:400% 300%;background-repeat:no-repeat;pointer-events:none;vertical-align:middle}
-.item-art-plant{background-position:0% 0%}.item-art-mug{background-position:33.333% 0%}.item-art-poster{background-position:66.667% 0%}.item-art-photo{background-position:100% 0%}.item-art-award{background-position:0% 50%}.item-art-slip{background-position:33.333% 50%}.item-art-token{background-position:66.667% 50%}.item-art-sketchbook{background-position:100% 50%}.item-art-sticker{background-position:0% 100%}.item-art-lever{background-position:33.333% 100%}
+.item-art{display:inline-block;width:44px;height:44px;flex:0 0 auto;background-size:contain;background-position:center;background-repeat:no-repeat;pointer-events:none;vertical-align:middle}
+.item-art-plant{background-image:url('../assets/park/keepsake-plant.png')}.item-art-mug{background-image:url('../assets/park/keepsake-mug.png')}.item-art-poster{background-image:url('../assets/park/keepsake-poster.png')}.item-art-photo{background-image:url('../assets/park/keepsake-photo.png')}.item-art-award{background-image:url('../assets/park/keepsake-award.png')}.item-art-slip{background-image:url('../assets/items/slip.png')}.item-art-token{background-image:url('../assets/items/token.png')}.item-art-sketchbook{background-image:url('../assets/park/keepsake-sketchbook.png')}.item-art-sticker{background-image:url('../assets/park/keepsake-sticker.png')}.item-art-lever{background-image:url('../assets/items/lever.png')}
 .packed-item .item-art{width:clamp(24px,5vw,54px);height:clamp(24px,5vw,54px);flex-shrink:1;min-height:18px}.keepsake .item-art{display:block;width:64px;height:64px;margin:0 auto 8px}.park-prop{padding:2px;background:transparent;border:0;box-shadow:none;filter:drop-shadow(0 3px 2px #24324730)}.park-prop .item-art{display:block;width:clamp(30px,5vw,62px);height:clamp(30px,5vw,62px)}.park-pip{width:23%;height:31%;top:73%;animation:park-breathe 5s ease-in-out infinite}.pip.facing-left{scale:-1 1}.shelf-item{touch-action:manipulation}.cell:focus-visible{outline-offset:-3px;z-index:3}.grid.placing .packed-item{pointer-events:none}.item-detail,.box-instructions,.box-message{font-size:14px}.shelf-item small,.keepsake small{font-size:12px}
 @keyframes park-breathe{50%{transform:translate(-50%,-101%) rotate(-1deg)}}
 @media(max-width:720px){.shelf-item{font-size:14px;gap:6px}.shelf-item .item-art{width:32px;height:32px}.shelf-item small{font-size:12px}.packing-tools button{font-size:14px;min-height:44px}.park-zone{font-size:12px;min-height:40px}.park-pip{width:26%;height:33%}.keepsake .item-art{width:52px;height:52px}.packed-item .item-label{font-size:12px}}
@@ -508,8 +508,8 @@ body:has(#game-shell[data-screen="start"]) #screen-backdrop{display:block}
 #grid .packed-item.rule-issue{outline:2px solid #a5752e;outline-offset:-3px}
 .rule-symbol{position:absolute;right:2px;top:2px;background:#efcf8c;color:#493619;border-radius:50%;width:20px;height:20px;font-weight:bold}
 #packing-ghost{display:grid;place-items:center;container-type:size}
-/* Same square sizing as packed tiles (see #grid .packed-item .item-art) so dragging doesn't stretch the sprite. */
-#packing-ghost>.item-art{width:min(70cqw,70cqh);height:min(70cqw,70cqh);opacity:.6}
+/* Same sizing as packed tiles (see #grid .packed-item .item-art). */
+#packing-ghost>.item-art{width:88%;height:80%;opacity:.6}
 #packing-ghost>span:not(.item-art){position:absolute;right:3px;top:3px;background:#fffaf0;padding:1px 5px;border-radius:4px}
 #packing-ghost.invalid{animation:blocked-fit .18s ease 2}
 @keyframes blocked-fit{50%{translate:3px 0}}
@@ -570,9 +570,8 @@ body:has(#game-shell[data-screen="start"]) #screen-backdrop{display:block}
 @media(max-width:720px){#scene-story:has(#scene-line:empty) .box-control{max-width:min(280px,calc(100vw - 48px))}#scene-story:has(#scene-line:empty) #box-waiting{max-width:150px;flex-wrap:wrap;overflow:visible}}
 /* Packed keepsakes retain the same illustration scale as their placement preview. */
 #grid .packed-item{display:flex;align-items:center;justify-content:center;padding:4px;overflow:hidden;border:2px solid #6e8e77;border-radius:7px;box-shadow:none;gap:0;container-type:size}
-/* Sprite cells are square: size from the tile's shorter side so 1×2 / 3×2 / 4×1 tiles don't stretch the art.
-   Keep the sheet's background-size/position from .item-art-* (contain would show the whole sheet). */
-#grid .packed-item .item-art{display:block;width:min(70cqw,70cqh);height:min(70cqw,70cqh);min-width:0;min-height:0;max-width:none;max-height:none;flex-shrink:0}
+/* Each item has its own image (task 012), shown with background-size:contain, so the art fills the tile without stretching. */
+#grid .packed-item .item-art{display:block;width:88%;height:80%;min-width:0;min-height:0;max-width:none;max-height:none;flex-shrink:0}
 #grid .packed-item .item-label{display:none;position:absolute;left:50%;bottom:5px;transform:translateX(-50%);max-width:calc(100% - 8px);padding:3px 5px;background:#fffaf0ec;border-radius:4px;font-size:12px;line-height:1.2;text-align:center;pointer-events:none}
 #grid .packed-item:is(:hover,:focus-visible) .item-label{display:block}
 #grid .packed-item.rule-issue{border-color:#a5752e}
@@ -728,3 +727,6 @@ body:has(#game-shell[data-screen="start"]) #screen-backdrop{display:block}
 #portrait.raccoon{background-image:url('../assets/pip/pip-portrait.webp');background-size:contain;background-position:center}
 #portrait.goose{background-image:url('../assets/graham/graham-portrait.png');background-size:contain;background-position:center}
 @media(prefers-reduced-motion:reduce){.opening-pip.pose-in,#pip.pose-in #pip-art{animation:none}#pip.walking:is([data-frame='step'],[data-frame='step2']) #pip-art{translate:none}}
+/* The new lever drawing is long and thin (task 012): give it a matching box on the pegboard. */
+#scene[data-room='supply'] .scene-object.object-lever{aspect-ratio:3/1;height:auto}
+#scene[data-room='supply'] .scene-object.object-lever .item-art{width:100%;height:100%}
