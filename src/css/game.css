@@ -657,3 +657,16 @@ body:has(#game-shell[data-screen="start"]) #screen-backdrop{display:block}
 #scene.room-leave{opacity:0;transition:opacity .2s ease-in}
 @keyframes room-fade{from{opacity:0}to{opacity:1}}
 @media(prefers-reduced-motion:reduce){#scene.room-leave{transition:none}.room-enter{animation:none}}
+/* Supplies and Lobby paintings (task 008). Positions are logical % of each room's core, matched to the art. */
+#scene[data-room='supply'] #bea-sprite{left:78%}
+#scene[data-room='supply'] #printer-hit-target{left:24%;top:29%;width:11%;height:13%}
+#scene[data-room='supply'] .printer-mechanism{left:33.3%;top:37.6%;width:1.7%;height:1.2%}
+#scene[data-room='supply'] .printer-mechanism.socket-exposed{left:33.5%;top:37.6%;width:1.1%}
+#scene[data-room='supply'] .printer-mechanism.tray-open{left:29.5%;top:40.2%;width:3.2%;height:1.1%}
+#scene[data-room='supply'] .machine-status{left:30.4%;top:44%}
+#scene[data-room='supply'] .lever-hook{left:38%;top:17.5%}
+#scene[data-room='supply'] .drawer-lock{left:68.5%;top:60.7%}
+#scene[data-room='lobby'] #graham-sprite{left:70%}
+#scene[data-room='lobby'] #exit-light{left:84.5%;top:3%}
+#scene[data-room='supply'] .effect-drawer{left:68.5%;top:58%}
+#scene[data-room='supply'] .effect-tool{left:38%;top:24%}
