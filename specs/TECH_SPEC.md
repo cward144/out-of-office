@@ -8,7 +8,7 @@
 ## 1. Stack
 - ✅ Static site: HTML5 + CSS + vanilla JavaScript. **No framework, no bundler, no build step.**
 - ✅ Scripts loaded with `<script defer>` in this order: `engine.js`, `navigation.js`, `camera.js`, `game.js`.
-- ✅ Cache-busting: CSS/JS URLs in `index.html` carry `?v=<tag>` (currently `005-desk-room-11`). Bump the tag whenever `src/css` or `src/js` changes, or returning players get stale files.
+- ✅ Cache-busting: CSS/JS URLs in `index.html` carry `?v=<tag>` (currently `005-desk-room-12`; image URLs that change in place get their own `?v=`). Bump the tag whenever `src/css` or `src/js` changes, or returning players get stale files.
 - ✅ Art is WebP raster (watercolor backdrops and sprites) plus CSS/inline SVG for small icons.
 - ✅ Fonts: DM Sans (body) and Space Grotesk, self-hosted as variable `woff2` (weights 400–700, latin + latin-ext) in `src/assets/fonts/`, declared with `@font-face` at the top of `game.css`. No font CDN.
 - ⬜ Runtime dependencies: none allowed without a spec change.

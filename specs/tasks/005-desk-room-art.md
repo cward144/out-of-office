@@ -33,8 +33,9 @@ Opening and desk played in the browser; rest of the path scripted against the en
 - [x] Phone: room shown at readable size and pans to follow Pip; tapping the floor walks to the tapped spot
 - [x] Opening fills the phone screen with monitor, Pip and speech in view; keyboard path; crossfade
 - [x] Supplies/Lobby unchanged; scripted golden path; no console errors
-- Known: on phones the bottom cards cover the nearest strip of floor, and the "Supplies →" floor button sits behind them (top tabs still work; exits are task 007). The room's rug pattern doesn't match the close-up's yet (designer to fix in the painting).
+- Known: on phones the bottom cards cover the nearest strip of floor, and the "Supplies →" floor button sits behind them (top tabs still work; exits are task 007).
 
 ## Notes
 - The two paintings are separate, so the transition is a crossfade, not a camera move.
 - A per-room Pip size factor was tried and removed: Pip's size is set by CSS, and Pip already reads at about desk height in the new room.
+- Rug fix (2026-10-15): designer's edited room painting with the close-up's leaf rug; verified only the rug area changed; image URL versioned `?v=2`.
