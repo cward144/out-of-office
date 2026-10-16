@@ -2,6 +2,7 @@
 
 One line per merged task, newest first: `YYYY-MM-DD · NNN · summary`
 
+- 2026-10-15 · 009 · New park ending: designer's painting, sitting Pip and Bea, keepsakes on the blanket, mockup closing card (EB Garamond Italic)
 - 2026-10-15 · 008 · New Supplies and Lobby paintings with painted doorways; both rooms on the crop-to-fit camera; layouts, hotspots and overlays re-mapped
 - 2026-10-15 · 007 · Exit arrows replace the room tabs; walk-to-exit with a short fade; arrows stay on screen when panned
 - 2026-10-15 · 005 · New desk-room and close-up artwork (tall plates, cropped never stretched); camera cover mode with phone panning; opening on its own close-up layer with a crossfade into the room; new desk walkable floor and item spots
