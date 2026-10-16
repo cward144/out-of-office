@@ -604,27 +604,24 @@ body:has(#game-shell[data-screen="start"]) #screen-backdrop{display:block}
 #game-shell[data-opening] #play .mission #chapter,#game-shell[data-opening] #play .mission .mission-actions{display:none}
 #game-shell[data-opening] #play .mission #goal{font-size:18px;margin:0}
 #game-shell[data-opening='reaction'] #play .mission{visibility:hidden}
-/* The close-up plate on its own layer; everything inside #opening-frame is placed in % of the 1672×941 image. */
+/* The square close-up painting on its own layer; everything inside #opening-frame is placed in % of the image. */
 .opening-stage{position:absolute;inset:0;z-index:20;overflow:hidden;background:#e9dcc4}
 .opening-stage[hidden]{display:none}
-.opening-backdrop{position:absolute;inset:-40px;width:calc(100% + 80px);height:calc(100% + 80px);object-fit:cover;object-position:50% 85%;filter:blur(32px) saturate(.75) brightness(1.08);opacity:.6}
-/* When the close-up is shorter than the screen (phones), feather its top and bottom into the backdrop. */
-.opening-stage.letterboxed .opening-art{-webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 7%,#000 93%,transparent 100%);mask-image:linear-gradient(to bottom,transparent 0,#000 7%,#000 93%,transparent 100%)}
 .opening-frame{position:absolute}
 .opening-art{position:absolute;inset:0;width:100%;height:100%;display:block}
 .opening-stage.leaving{opacity:0;transform:scale(1.12);transform-origin:40% 45%;transition:opacity .9s ease-in-out,transform .9s ease-in-out;pointer-events:none}
 .opening-item{position:absolute;transform:translate(-50%,-100%);aspect-ratio:1;pointer-events:none}
 .opening-item .item-art{display:block;width:100%;height:100%;filter:drop-shadow(0 2px 1px #332e2538)}
-.opening-mug{left:22.6%;top:45.9%;width:5.4%}
-.opening-plant{left:52%;top:43.4%;width:7.6%}
-.opening-poster{left:54.5%;top:26.6%;width:6%}
-.opening-photo{left:59.8%;top:43%;width:4.2%}
-.opening-award{left:90%;top:35.9%;width:3.4%}
-.opening-pip{position:absolute;left:49.5%;top:51.4%;width:19.5%;height:auto;transform:scaleX(-1);filter:drop-shadow(0 3px 2px #53463222);pointer-events:none}
+.opening-mug{left:22.6%;top:52.64%;width:5.4%}
+.opening-plant{left:52%;top:51.23%;width:7.6%}
+.opening-poster{left:54.5%;top:41.78%;width:6%}
+.opening-photo{left:59.8%;top:51.01%;width:4.2%}
+.opening-award{left:90%;top:47.01%;width:3.4%}
+.opening-pip{position:absolute;left:49.5%;top:55.74%;width:19.5%;height:auto;transform:scaleX(-1);filter:drop-shadow(0 3px 2px #53463222);pointer-events:none}
 .opening-pip.glance{animation:pip-glance .6s ease-out 1}
 @keyframes pip-glance{0%{transform:scaleX(-1) rotate(0)}40%{transform:scaleX(-1) rotate(5deg)}100%{transform:scaleX(-1) rotate(0)}}
 /* The invite card sits on the monitor's screen and scales with it (container units), with a readable minimum. */
-.monitor-invite{position:absolute;z-index:5;left:26.9%;top:15.9%;width:20.9%;height:21%;padding:0;border:0;border-radius:3px;container-type:size;display:flex;align-items:center;justify-content:center;background:linear-gradient(160deg,#cfe3ec 0%,#a9c9d8 55%,#8fb3c4 100%);box-shadow:0 0 8px 2px #fff5d6aa;cursor:pointer}
+.monitor-invite{position:absolute;z-index:5;left:26.9%;top:35.75%;width:20.9%;height:11.82%;padding:0;border:0;border-radius:3px;container-type:size;display:flex;align-items:center;justify-content:center;background:linear-gradient(160deg,#cfe3ec 0%,#a9c9d8 55%,#8fb3c4 100%);box-shadow:0 0 8px 2px #fff5d6aa;cursor:pointer}
 .monitor-invite[hidden]{display:none}
 .invite-card{display:grid;grid-template-columns:auto 1fr;align-items:center;column-gap:5cqw;row-gap:6cqh;flex:0 0 auto;width:max(74cqw,170px);padding:max(8cqh,8px) max(6cqw,10px);background:#fffaf0;border-radius:max(4cqh,6px);box-shadow:0 1px 3px #24324733;color:#243247;text-align:left;animation:invite-pulse 1.8s ease-in-out infinite}
 .invite-icon{width:max(14cqw,24px);height:auto}
@@ -636,7 +633,7 @@ body:has(#game-shell[data-screen="start"]) #screen-backdrop{display:block}
 .monitor-invite:focus-visible{outline:3px solid #243247;outline-offset:3px}
 @keyframes invite-pulse{0%,100%{box-shadow:0 1px 3px #24324733}50%{box-shadow:0 0 0 6px #fff5d6,0 1px 3px #24324733}}
 /* Pip's line: anchored above the opening Pip's head, nudged on-screen by fitSpeech(). */
-.pip-speech{position:absolute;z-index:7;left:47%;bottom:49%;display:flex;align-items:center;gap:10px;transform:translateX(var(--shift,0px));width:max-content;max-width:min(300px,80vw);padding:12px 10px 12px 18px;background:#fffaf0;border-radius:18px;box-shadow:0 4px 14px #24324726;color:#243247;font-size:17px;line-height:1.4}
+.pip-speech{position:absolute;z-index:7;left:47%;bottom:44.5%;display:flex;align-items:center;gap:10px;transform:translateX(var(--shift,0px));width:max-content;max-width:min(300px,80vw);padding:12px 10px 12px 18px;background:#fffaf0;border-radius:18px;box-shadow:0 4px 14px #24324726;color:#243247;font-size:17px;line-height:1.4}
 .pip-speech[hidden]{display:none}
 .pip-speech::after{content:'';position:absolute;left:clamp(14px,calc(30% - var(--shift,0px)),calc(100% - 30px));bottom:-9px;border:9px solid transparent;border-bottom:0;border-top-color:#fffaf0}
 .pip-speech p{margin:0}
@@ -644,7 +641,11 @@ body:has(#game-shell[data-screen="start"]) #screen-backdrop{display:block}
 .pip-speech button:hover,.pip-speech button:focus-visible{background:#e9e0cd}
 .pip-speech button:disabled{opacity:.35}
 @media(prefers-reduced-motion:reduce){.invite-card,.opening-pip.glance{animation:none}.opening-stage.leaving{transition:none}}
-/* Desk room plate (task 005): its top edge crosses the ceiling trim, so soften the stretched cap into a gradient. */
-#scene[data-room='desk'] .room-cap>img{filter:blur(18px);transform:scale(1.06)}
-#scene[data-room='desk'] .room-architecture>img{-webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 5%);mask-image:linear-gradient(to bottom,transparent 0,#000 5%)}
-#scene[data-room='desk'] .room-cap{height:calc(var(--art-top,64px) + var(--art-height,600px) * .06)}
+/* Cover camera (task 005): rooms with a tall painting show it once, cropped to fit, never stretched. */
+#scene[data-camera='cover'] .room-cap,#scene[data-camera='cover'] .room-floor{display:none}
+#scene[data-camera='cover'] .room-architecture{left:var(--img-left,0px);top:var(--img-top,0px);width:var(--img-width,100%);height:var(--img-height,100%);transition:left .25s ease-out}
+#scene[data-camera='cover'] .room-architecture>img{top:0;left:0;width:100%;height:100%;object-fit:fill}
+#scene[data-camera='cover'] .world-space{left:var(--world-left,7.8125%);width:var(--world-width,84.375%);transition:left .25s ease-out}
+@media(prefers-reduced-motion:reduce){#scene[data-camera='cover'] .room-architecture,#scene[data-camera='cover'] .world-space{transition:none}}
+/* A new room or screen size jumps straight to the right view; only Pip's walking pans smoothly. */
+#scene.camera-snap .room-architecture,#scene.camera-snap .world-space{transition:none}

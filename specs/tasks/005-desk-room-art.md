@@ -27,7 +27,14 @@ Opening and desk played in the browser; rest of the path scripted against the en
 - [x] Supplies → Lobby → exit (scripted)
 - [ ] Park ending → "Another last day" (not re-run this task; unchanged code path)
 
+## Follow-up (same day): tall plates, no blur, phone panning
+- [x] Designer's extended paintings in: room 4:3 (`desk-room-tall.webp`), close-up square; original areas verified unchanged by pixel alignment
+- [x] No stretched or blurred areas on desktop or phone (cap blur and opening backdrop removed)
+- [x] Phone: room shown at readable size and pans to follow Pip; tapping the floor walks to the tapped spot
+- [x] Opening fills the phone screen with monitor, Pip and speech in view; keyboard path; crossfade
+- [x] Supplies/Lobby unchanged; scripted golden path; no console errors
+- Known: on phones the bottom cards cover the nearest strip of floor, and the "Supplies →" floor button sits behind them (top tabs still work; exits are task 007). The room's rug pattern doesn't match the close-up's yet (designer to fix in the painting).
+
 ## Notes
 - The two paintings are separate, so the transition is a crossfade, not a camera move.
-- Phones: the full room keeps the existing tall-screen behaviour (small room band, stretched floor), same as before this task.
 - A per-room Pip size factor was tried and removed: Pip's size is set by CSS, and Pip already reads at about desk height in the new room.
