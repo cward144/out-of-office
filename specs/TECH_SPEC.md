@@ -8,7 +8,7 @@
 ## 1. Stack
 - ✅ Static site: HTML5 + CSS + vanilla JavaScript. **No framework, no bundler, no build step.**
 - ✅ Scripts loaded with `<script defer>` in this order: `engine.js`, `navigation.js`, `camera.js`, `game.js`.
-- ✅ Cache-busting: CSS/JS URLs in `index.html` carry `?v=<tag>` (currently `004-opening-4`). Bump the tag whenever `src/css` or `src/js` changes, or returning players get stale files.
+- ✅ Cache-busting: CSS/JS URLs in `index.html` carry `?v=<tag>` (currently `005-desk-room-9`). Bump the tag whenever `src/css` or `src/js` changes, or returning players get stale files.
 - ✅ Art is WebP raster (watercolor backdrops and sprites) plus CSS/inline SVG for small icons.
 - ✅ Fonts: DM Sans (body) and Space Grotesk, self-hosted as variable `woff2` (weights 400–700, latin + latin-ext) in `src/assets/fonts/`, declared with `@font-face` at the top of `game.css`. No font CDN.
 - ⬜ Runtime dependencies: none allowed without a spec change.
@@ -50,8 +50,9 @@ Keep one responsibility per file. If `game.js` grows past ~1500 lines, propose a
 - ✅ **Menu:** sound switch, how to play, notebook, show-labels switch, restart.
 - ✅ **Hotspots are built at runtime** from the `spots` table in `game.js` (`[id, label, x, y, walkX, walkY]` per room), not static HTML.
 - ✅ State is a single plain object (`OfficeGame.fresh()`) serialized to JSON: `{version, started, room, collected[], packed{id:{x,y,r}}, flags{}, hints{}, position{x,y}, ended, park{}, settled, parkLast}`. Progress is driven by boolean `flags` (e.g. `tutorial`, `label`, `water`, `printer`, `bea`, `gate`, `invited`, `boss`). UI re-renders from state via `render()`.
+- ✅ **Desk room** (task 005): plate `desk-room-wide.webp` (designer-supplied). Walkable floor = `OfficeNav.obstacles.desk` (back wall to y 47, Pip's desk + chair, shelf, second desk + chair, potted plant); item spots in `deskObjects`/`spots.desk` in `game.js`. Its top edge crosses the ceiling trim, so the room cap is blurred and the art's top 5% is faded into it (desk-only CSS).
 - ✅ Chapter is derived from flags, not stored: 00 until `tutorial`, 01 until `printer`, 02 until `gate`, then 03.
-- ✅ **Opening** (GAME_DESIGN §4, task 004): while `!flags.inviteRead`, `game.js` runs a UI-only `openingStep` (`quiet` → `invite` → `message` → `reaction`) mirrored on `#game-shell[data-opening]`. CSS hides the room tabs, doors, box, notebook, hotspots and story strip; JS guards `move`, `interactAtSpot`, `room`, `openPendingBox`, `requestHint` and the B/arrow keys. The step isn't saved: reloading restarts from `quiet`. `frameOpening()` zooms `#scene` (CSS transform, `--zoom` var) onto logical region x 2–48, y 2–58 (Pip's desk) and eases back out (`.opening-release`) when the opening ends. `#monitor-invite` covers the left monitor screen (logical x 16.2–27.8, y 6.8–16.5) and sizes its card in container units with a px/`--zoom` minimum so it stays readable on phones. `#pip-speech` follows Pip via `paintPip()`; `fitSpeech()` nudges it on-screen. Opening UI text inside the zoomed world divides px sizes by `--zoom`. Finishing sets `inviteRead` and hands over to the plant tutorial.
+- ✅ **Opening** (GAME_DESIGN §4, task 004): while `!flags.inviteRead`, `game.js` runs a UI-only `openingStep` (`quiet` → `invite` → `message` → `reaction`) mirrored on `#game-shell[data-opening]`. CSS hides the room tabs, doors, box, notebook, hotspots and story strip; JS guards `move`, `interactAtSpot`, `room`, `openPendingBox`, `requestHint` and the B/arrow keys. The step isn't saved: reloading restarts from `quiet`. The opening draws on its own layer, `#opening-stage` (task 005), over `#scene`: the close-up plate `desk-closeup.webp` in `#opening-frame`, which `fitOpeningStage()` sizes to cover the stage but never zooms past image x 22–72% (monitor to Pip), so phones letterbox it over a blurred copy (`.letterboxed` feathers the edges). Everything in the frame is placed in % of the 1672×941 image: `#monitor-invite` on the screen (x 26.9%, y 15.9%, w 20.9%, h 21%), decorative copies of the five desk items, a still `#opening-pip`, and `#pip-speech` (nudged on-screen by `fitSpeech()`). Leaving the opening crossfades the stage out (`.leaving`, 0.9 s, scale 1.12) into the full room; reduced motion swaps instantly. The two plates are painted separately, so this is deliberately a crossfade, not a camera move. Finishing sets `inviteRead` and hands over to the plant tutorial.
 
 ## 4. Coding style
 - ES2020+, `"use strict"`, no modules required. ✅ Existing namespace: each file is an IIFE that exports one global — `OfficeGame` (engine), `OfficeNav` (navigation), `OfficeCamera` (camera); `game.js` consumes them as `G`, `N`, `C`. The non-UI files also `module.exports` their API when `module` exists, so they can be loaded by a test script. Reuse these; don't add new globals.
@@ -81,7 +82,7 @@ Keep one responsibility per file. If `game.js` grows past ~1500 lines, propose a
 
 ## 7. Assets
 - Format: WebP, ≤ 400 KB per backdrop, ≤ 120 KB per sprite where possible. Wide backdrops share one image across cap/architecture/floor layers.
-- Naming: `<subject>-<variant>.webp`, e.g. `desk-empty-wide.webp`, `pip-watercolor.webp`, `pip-resting-watercolor.webp`, `park-wide.webp`.
+- Naming: `<subject>-<variant>.webp`, e.g. `desk-room-wide.webp`, `pip-watercolor.webp`, `pip-resting-watercolor.webp`, `park-wide.webp`.
 - Every `<img>` has meaningful `alt` or `alt=""` + `aria-hidden` when decorative.
 - Lazy-load anything not needed on first paint (`loading="lazy"`); the start-screen art uses `fetchpriority="high"`.
 - Provenance: record how each asset was made in `src/assets/CREDITS.md` (tool, date, human-edited yes/no).
@@ -113,5 +114,5 @@ Keep one responsibility per file. If `game.js` grows past ~1500 lines, propose a
 
 ## 13. Known gaps / to verify
 - 🟡 **Asset budget is exceeded.** Wide backdrops are 1.4–2.0 MB each (§7 says ≤ 400 KB) and the first paint loads ~2.8 MB (§10 says < 1.5 MB). Needs a re-encode task; check visual quality with the designer.
-- 🟡 `src/assets/CREDITS.md` (§7) doesn't exist; how the art was made is unknown to agents.
+- 🟡 `src/assets/CREDITS.md` exists (task 005); provenance of the art imported from the original build is still unknown (Q-007).
 - ⬜ Automated tests: none. Candidate: a tiny Node script that validates content data (every item has a shape that fits the 6×4 box; every dialogue id referenced exists).
